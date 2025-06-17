@@ -30,6 +30,7 @@ venv/
 
 # Project-specific files
 .notes.md
+data
 
 # === Build Artifacts ===
 # Build directories
