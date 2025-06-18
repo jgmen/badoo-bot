@@ -1,6 +1,7 @@
 import asyncio
 from typing import Dict, Any
-from core.browser_manager import BrowserManager
+from core.services.browser.browser_manager import BrowserManager
+from core.services.cache.cache_manager import CacheManager
 from dataclasses import dataclass
 from playwright.async_api import Request, Route
 
@@ -77,10 +78,18 @@ async def intercept_request_signature(
 
 
 async def main():
+    cache = CacheManager.get_instance()
+
     signature_url = "https://badoo.com/mwebapi.phtml?SERVER_GET_USER_LIST"
     trigger_url = "https://badoo.com/connections"
-    signature = await intercept_request_signature(signature_url, trigger_url)
-    print(signature)
+    cached_signature = cache.get(signature_url)
+
+    if cached_signature:
+        print(cached_signature)
+    else:
+        signature = await intercept_request_signature(signature_url, trigger_url)
+        cache.set(signature_url, signature)
+        print(signature)
 
 
 if __name__ == "__main__":
