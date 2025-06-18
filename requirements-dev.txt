@@ -6,7 +6,7 @@
 #
 black==25.1.0
     # via badoo-bot (pyproject.toml)
-certifi==2025.4.26
+certifi==2025.6.15
     # via requests
 charset-normalizer==3.4.2
     # via requests
@@ -24,7 +24,7 @@ isort==6.0.1
     # via badoo-bot (pyproject.toml)
 mccabe==0.7.0
     # via flake8
-mypy==1.16.0
+mypy==1.16.1
     # via badoo-bot (pyproject.toml)
 mypy-extensions==1.1.0
     # via
@@ -52,7 +52,7 @@ pyflakes==3.3.2
     # via flake8
 pygments==2.19.1
     # via pytest
-pytest==8.4.0
+pytest==8.4.1
     # via
     #   badoo-bot (pyproject.toml)
     #   pytest-base-url
@@ -63,6 +63,8 @@ pytest-playwright==0.7.0
     # via badoo-bot (pyproject.toml)
 python-slugify==8.0.4
     # via pytest-playwright
+redis==6.2.0
+    # via badoo-bot (pyproject.toml)
 requests==2.32.4
     # via
     #   badoo-bot (pyproject.toml)
@@ -73,5 +75,5 @@ typing-extensions==4.14.0
     # via
     #   mypy
     #   pyee
-urllib3==2.4.0
+urllib3==2.5.0
     # via requests
